@@ -1,0 +1,46 @@
+
+name: Dart CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # Set up the Dart SDK
+      - uses: dart-lang/setup-dart@v1
+
+      # Set up JDK for ANTLR
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      # Install dependencies
+      - name: Install dependencies
+        run: dart pub get
+
+      # Verify that the code is formatted correctly
+      - name: Verify formatting
+        # Intentionally not exiting because it doesn't support excluding files.
+        run: dart format --output=none .
+
+      # Run static analysis
+      - name: Analyze project
+        run: dart analyze
+
+      # Run the build_runner to ensure the builder works
+      - name: Run build_runner
+        run: dart run build_runner build --delete-conflicting-outputs
+
+      # Run tests
+      - name: Run tests
+        run: dart test

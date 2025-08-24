@@ -1,0 +1,19 @@
+builders:
+  antlrBuilder:
+    target: ":antlr4_builder"
+    import: "package:antlr4_builder/antlr4_builder.dart"
+    builder_factories: ["antlrBuilder"]
+    build_extensions:
+      {
+        ".g4":
+          [
+            "Lexer.dart",
+            "Parser.dart",
+            "Listener.dart",
+            "BaseListener.dart",
+            "Visitor.dart",
+            "BaseVisitor.dart",
+          ],
+      }
+    auto_apply: dependents
+    build_to: source

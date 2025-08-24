@@ -1,0 +1,10 @@
+targets:
+  $default:
+    builders:
+      antlr4_builder|antlrBuilder:
+        enabled: true
+        options:
+          version: "4.13.2" # Specify the ANTLR version to use (optional, defaults to 4.13.2)
+          generate_listener: true
+          generate_visitor: true
+          extra_args: ["-Werror"]
