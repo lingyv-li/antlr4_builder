@@ -1,7 +1,7 @@
 name: antlr4_builder
-description: A starting point for Dart libraries or applications.
-version: 1.0.0
-# repository: https://github.com/my_org/my_repo
+description: Plugin for generating dart parser code from ANTLR4 .g4 grammar.
+version: 0.1.0
+repository: https://github.com/lingyv-li/antlr4_builder
 topics:
   - build-runner
   - codegen
