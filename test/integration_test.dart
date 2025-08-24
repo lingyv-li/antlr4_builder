@@ -22,10 +22,10 @@ name: test_package
 environment:
   sdk: '>=3.0.0 <4.0.0'
 dependencies:
-  antlr4_builder:
-    path: ${p.current}
   antlr4: ^$antlr4Version
 dev_dependencies:
+  antlr4_builder:
+    path: ${p.current}
   build_runner: ^2.0.0
 ''';
       await File(p.join(packagePath, 'pubspec.yaml'))

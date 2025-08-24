@@ -20,18 +20,18 @@ A Dart package that integrates ANTLR4 grammar processing into the `build_runner`
 
 ### Installation
 
-Add `antlr4_builder` to your project's `pubspec.yaml` under `dependencies`:
+Add `antlr4` to your project's `pubspec.yaml` under `dependencies`:
 
 ```yaml
 dependencies:
-  antlr4_builder: ^1.0.0 # Replace with the actual latest version
   antlr4: ^4.13.0 # Required for generated ANTLR code
 ```
 
-And add `build_runner` to your `dev_dependencies`:
+And add `antlr4_builder` and `build_runner` to your `dev_dependencies`:
 
 ```yaml
 dev_dependencies:
+  antlr4_builder: ^0.1.0 # Replace with the actual latest version
   build_runner: ^2.0.0 # Replace with the actual latest version
 ```
 
